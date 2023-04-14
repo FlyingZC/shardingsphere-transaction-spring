@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zc.example.mapper.OrderMapper">
+    <resultMap id="BaseResultMap" type="com.zc.example.entity.Order">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="user_id" property="userId" />
+        <result column="order_id" property="orderId" />
+        <result column="uuid" property="uuid" />
+        <result column="status" property="status" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="is_deleted" property="deleted" />
+    </resultMap>
+    
+    <update id="createTable">
+        CREATE TABLE IF NOT EXISTS t_order
+        (
+            id
+            BIGINT
+            NOT
+            NULL,
+            user_id
+            BIGINT
+            DEFAULT
+            NULL,
+            order_id
+            BIGINT
+            DEFAULT
+            NULL,
+            uuid
+            VARCHAR
+        (
+            36
+        ) DEFAULT NULL,
+            status VARCHAR
+        (
+            32
+        ) DEFAULT NULL,
+            create_time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+            update_time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+            is_deleted TINYINT
+        (
+            1
+        ) NOT NULL DEFAULT 0,
+            PRIMARY KEY
+        (
+            id
+        )
+            );
+    </update>
+    
+    <update id="dropTable">
+        DROP TABLE IF EXISTS t_order;
+    </update>
+    
+    <update id="truncateTable">
+        TRUNCATE TABLE t_order;
+    </update>
+    
+    <select id="countTable" resultType="java.lang.Long">
+        SELECT COUNT(*) FROM ${tableName};
+    </select>
+</mapper>

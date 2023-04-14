@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    driver-class-name: org.apache.shardingsphere.driver.ShardingSphereDriver
+    # base
+    url: jdbc:shardingsphere:classpath:conf/config-sharding-base.yaml
+
+server:
+  port: 8888
+
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: com.zc.example.entity
+  type-enums-package: com.zc.example.enums
+
+logging:
+  config: classpath:logback.xml
+  level:
+    com.zc.example.mapper: debug
