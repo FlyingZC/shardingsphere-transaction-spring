@@ -4,6 +4,10 @@ ShardingSphere transaction integrates Spring demos
 ## 1.安装seata1.4.2
 ### 启动 Seata Server
 按照 [seata-work-shop](https://github.com/seata/seata-workshop) 中的步骤,下载并启动 Seata 服务器.
+启动成功日志如下:
+```log
+INFO --- [                     main] i.s.core.rpc.netty.NettyServerBootstrap  : Server started, listen port: 8091
+```
 
 ### 创建 undo_log 表
 在每一个分片数据库实例中执创建 `undo_log` 表(以 MySQL 为例).

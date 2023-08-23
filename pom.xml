@@ -11,7 +11,7 @@
     <groupId>com.zc</groupId>
     <artifactId>shardingsphere-tx-spring-boot</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>shardingsphere-tx-spring-boo</name>
+    <name>shardingsphere-tx-spring-boot</name>
     <description>shardingsphere-tx-spring-boot</description>
     
     <properties>
