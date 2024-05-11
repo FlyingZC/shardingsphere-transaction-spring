@@ -15,12 +15,15 @@
     <description>shardingsphere-tx-spring-boot</description>
     
     <properties>
-        <shardingsphere.version>5.3.1</shardingsphere.version>
+<!--        <shardingsphere.version>5.4.0</shardingsphere.version>-->
+        <shardingsphere.version>5.3.2</shardingsphere.version>
         <mybatis-plus-boot.version>3.5.1</mybatis-plus-boot.version>
         <jackson.version>2.13.2</jackson.version>
-        <mysql.version>5.1.45</mysql.version>
+        <mysql.version>8.0.28</mysql.version>
+<!--        <mysql.version>8.0.19</mysql.version>-->
         <atomikos.version>5.0.8</atomikos.version>
         <seata.version>1.4.2</seata.version>
+        <antlr.version>4.10.1</antlr.version>
     </properties>
     
     <dependencies>
@@ -41,7 +44,19 @@
             <artifactId>shardingsphere-transaction-base-seata-at</artifactId>
             <version>${shardingsphere.version}</version>
         </dependency>
-    
+
+        <dependency>
+            <groupId>org.antlr</groupId>
+            <artifactId>antlr4-runtime</artifactId>
+            <version>${antlr.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.antlr</groupId>
+            <artifactId>antlr4</artifactId>
+            <version>${antlr.version}</version>
+        </dependency>
+        
         <dependency>
             <groupId>io.seata</groupId>
             <artifactId>seata-all</artifactId>

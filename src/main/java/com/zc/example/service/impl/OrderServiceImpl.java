@@ -44,10 +44,11 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
     // ----------------------------------------------------- 事务
     
     @Override
-    @Transactional(rollbackFor = Exception.class)
+     @Transactional(rollbackFor = Exception.class)
     public void saveFailed() throws Exception {
         orderMapper.insert(createOrderEntity(1L, 1L));
         orderMapper.insert(createOrderEntity(1L, 2L));
+        int i = 1/0;
         orderMapper.insert(createOrderEntity(2L, 3L));
         orderMapper.insert(createOrderEntity(2L, 4L));
         if (true) {

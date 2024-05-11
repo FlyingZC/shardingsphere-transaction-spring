@@ -2,7 +2,14 @@ spring:
   datasource:
     driver-class-name: org.apache.shardingsphere.driver.ShardingSphereDriver
     # base
-    url: jdbc:shardingsphere:classpath:conf/config-sharding-base.yaml
+    url: jdbc:shardingsphere:classpath:conf/config-sharding-local.yaml
+  
+  # local
+#  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+#    username: root
+#    password: root
 
 server:
   port: 8888
